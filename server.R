@@ -35,27 +35,19 @@ shinyServer(
       output$oid3 <- renderPrint({input$Complexity})
       output$oid4 <- renderPrint({input$Teamexperience})
       output$oid5 <- renderPrint({input$id1})
-
-      print(input$Account)
-      print(input$DataPackage)
-      print(input$Complexity)
-      print(input$Teamexperience)
-      
       result<- finalDat[which((finalDat$Complexity == input$Complexity) &
                                 (finalDat$Teamexperience == input$Teamexperience) & 
                                 (finalDat$Acount == input$Account) & 
                                 (finalDat$dataPack == input$DataPackage)),]
-      print(result)
-      
       estimate <- result$Value*result$Weight
       
       hist(finalDat$Value*finalDat$Weight, xlab='Spread of efforts in hours', col='lightblue',main='Histogram')
-      print("x")
-      
+     
       mu <- mean(finalDat$Value*finalDat$Weight)
       lines(c(mu, mu), c(0, 200),col="red",lwd=5)
       lines(c(estimate, estimate), c(0, 200),col="green",lwd=5)
-      
+      text(63, 150, paste("mu = ", mu))
+      text(63, 140, paste("PointEstimate = ", round(estimate, 2)))
       output$oid7 <- renderPrint({estimate})
       
    })

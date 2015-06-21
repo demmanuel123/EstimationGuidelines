@@ -1,0 +1,31 @@
+---
+title: "EstimationGuidelines"
+author: "Daina"
+date: "Monday, June 22, 2015"
+output: html_document
+runtime: shiny
+---
+
+
+## Inputs and Outputs
+
+The shiny app on Estimation Guideline is a prototype for a utility for estimating the efforts in man hours for development of a data product. 
+The eastimation is based with 4 parameters. 
+1. Complexity on a scale from 1 to 5, 1 being the least complex and 5 being highest complexity.
+Select Complexity of your data product on a scale of 1 to 5 .
+
+2. Team experience is the 2nd parameter impacting efforts. Average team experience on tools/language and domain which is scaled to 1 to 5 range.
+
+3. Kind of project being developed, eg if its a Development project for proof of concept alone. Or is a project which will be deployed for live, or if the scope is enhancement of current projects. 
+
+4. Last parameter impacting the estimates are the kind of data package to be used. eg "Data loading and Database","Data visualization","Analysis Reporting","Web interface"
+
+
+The prediction model is a random algorithm with Values assigned to each combination and each weightage given to the same,
+The model can be enhanced for your requirement based on your historical data. 
+
+Give the project name and values for your parameters , get an indicative estimate. 
+Thanks 
+Enjoy the App
+
+

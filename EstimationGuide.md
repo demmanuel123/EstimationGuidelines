@@ -43,12 +43,16 @@ finalDat <- data.frame(sampleDat, Value = runif(length(sampleDat[,1]), 50,200) ,
 ```
 
 
+Plot to show historical trend Vs Estimated value for the project
+========================================================
+
+![plot of chunk unnamed-chunk-2](EstimationGuide-figure/unnamed-chunk-2-1.png) 
+
 Next Steps and prospects
 ========================================================
 
 1. This model can be extended , refined and used by any individual / organization by entering the values based on their trend. 
 
 2. It helps engineers focus on their work with a easy to form plan 
-
 
 

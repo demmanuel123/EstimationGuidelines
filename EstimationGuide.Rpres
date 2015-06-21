@@ -42,12 +42,41 @@ finalDat <- data.frame(sampleDat, Value = runif(length(sampleDat[,1]), 50,200) ,
 ```
 
 
+Plot to show historical trend Vs Estimated value for the project
+========================================================
+
+```{r echo=FALSE}
+#Output to user
+Complexity <- 1:5
+Teamexperience <- 1:5
+Account <- c("Development ProofOfConcept", "Development Live Project", "Enhancement")
+dataPackage <- c("Data loading and Database","Data visualization","Analysis Reporting","Web interface")
+dat <- data.frame(Complexity)
+sampleDat <- rbind(data.frame(dat,Teamexperience = Teamexperience[1]),
+                   data.frame(dat, Teamexperience = Teamexperience[2]),
+                   data.frame(dat, Teamexperience = Teamexperience[3]),
+                   data.frame(dat, Teamexperience = Teamexperience[4]),
+                   data.frame(dat, Teamexperience = Teamexperience[5]))
+
+sampleDat <- rbind(data.frame(sampleDat,Acount = Account[1]),
+                   data.frame(sampleDat, Acount = Account[2]),
+                   data.frame(sampleDat, Acount = Account[3]))
+sampleDat <- rbind(data.frame(sampleDat,dataPack = dataPackage[1]), data.frame(sampleDat,dataPack = dataPackage[2]), data.frame(sampleDat,dataPack = dataPackage[3]), data.frame(sampleDat,dataPack = dataPackage[4]))
+finalDat <- data.frame(sampleDat, Value = runif(length(sampleDat[,1]), 50,200) ,Weight = runif(length(sampleDat[,1]), 5,20))
+
+estimate=2401
+ hist(finalDat$Value*finalDat$Weight, xlab='Spread of efforts in hours', col='lightblue',main='Histogram')
+     
+ mu <- mean(finalDat$Value*finalDat$Weight)
+ lines(c(mu, mu), c(0, 200),col="red",lwd=5)
+ lines(c(estimate, estimate), c(0, 200),col="green",lwd=5)
+ ```
+
 Next Steps and prospects
 ========================================================
 
 1. This model can be extended , refined and used by any individual / organization by entering the values based on their trend. 
 
 2. It helps engineers focus on their work with a easy to form plan 
-
 
 
